@@ -22,14 +22,15 @@ namespace wallaby_api.Services
             ConventionRegistry.Register("camelCase", pack, t => true);
         }
 
-        public IEnumerable<T> GetEntities<T>(string orderBy, int pageSize, int pageNumber)
+        public IEnumerable<Entity> GetEntities<Entity>(string orderBy, int pageSize, int pageNumber)
         {
-            return _db.GetCollection<T>("entities").AsQueryable()
-                      .OfType<T>()
+            return _db.GetCollection<Entity>("entities")
+                      .OfType<Entity>()
+                      .AsQueryable()
                       .Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
         }
 
-        public Entity GetEntity(ObjectId id)
+        public Entity GetEntity(string id)
         {
             return _db.GetCollection<Entity>("entities").AsQueryable().FirstOrDefault(x => x.Id == id);
         }

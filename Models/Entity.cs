@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace wallaby_api.Models
@@ -9,7 +10,8 @@ namespace wallaby_api.Models
     {
         private DateTime _now = DateTime.UtcNow;
 
-        public MongoDB.Bson.ObjectId Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)] //serve per farlo vedere come stringa quando viene jsonserialized anche se è un ObjectId a tutti gli effetti
+        public string Id { get; set; }
 
         private DateTime? _CreatedAt;
 

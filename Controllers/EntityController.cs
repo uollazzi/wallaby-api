@@ -63,9 +63,10 @@ namespace wallaby_api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Entity Get(ObjectId id)
+        public Entity Get(string id)
         {
-            return _entityStore.GetEntity(id);
+            var model = _entityStore.GetEntity(id);
+            return model;
         }
 
         // POST api/values
