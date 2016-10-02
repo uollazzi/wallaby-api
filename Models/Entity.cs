@@ -8,13 +8,10 @@ namespace wallaby_api.Models
     [BsonDiscriminator(RootClass = true)]
     public abstract class Entity
     {
-        private DateTime _now = DateTime.UtcNow;
-
         [BsonRepresentation(BsonType.ObjectId)] //serve per farlo vedere come stringa quando viene jsonserialized anche se è un ObjectId a tutti gli effetti
         public string Id { get; set; }
 
         private DateTime? _CreatedAt;
-
         [Required]
         public DateTime CreatedAt
         {
@@ -30,6 +27,15 @@ namespace wallaby_api.Models
         public DateTime? DeletedAt { get; set; }
 
         [Required]
-        public string Slug { get; set; }
+        public bool Online { get; set; }
+
+        [BsonIgnore]
+        public bool IsDeleted
+        {
+            get
+            {
+                return DeletedAt.HasValue;
+            }
+        }
     }
 }

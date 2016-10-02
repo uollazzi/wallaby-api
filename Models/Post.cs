@@ -1,8 +1,9 @@
 namespace wallaby_api.Models
 {
-    public class Post : Entity
+    public class Post : Entity, IRoutable
     {
-        public string Title { get; set; }
-        public string Text { get; set; }
+        public LocalizedField Title { get; set; }
+        public LocalizedField Text { get; set; }
+        public LocalizedField Slug { get; set; }
     }
 }

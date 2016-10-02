@@ -23,9 +23,45 @@ namespace wallaby_api.Controllers
             for (int i = 0; i < 5; i++)
             {
                 var p = new Post();
-                p.Slug = "post" + (i + 1).ToString();
-                p.Title = "Titolo post " + (i + 1).ToString();
-                p.Text = "Testo post " + (i + 1).ToString();
+                p.Slug = new LocalizedField
+                {
+                    Translations = new List<Translation> {
+                        new Translation {
+                            Lang = "it",
+                            Text = "post" + (i + 1).ToString()
+                        },
+                        new Translation {
+                            Lang = "en",
+                            Text = "post-en" + (i + 1).ToString()
+                        }
+                    }
+                };
+                p.Title = new LocalizedField
+                {
+                    Translations = new List<Translation> {
+                        new Translation {
+                            Lang = "it",
+                            Text = "Titolo post" + (i + 1).ToString()
+                        },
+                        new Translation {
+                            Lang = "en",
+                            Text = "Title post" + (i + 1).ToString()
+                        }
+                    }
+                };
+                p.Text = new LocalizedField
+                {
+                    Translations = new List<Translation> {
+                        new Translation {
+                            Lang = "it",
+                            Text = "Testo post" + (i + 1).ToString()
+                        },
+                        new Translation {
+                            Lang = "en",
+                            Text = "Text post" + (i + 1).ToString()
+                        }
+                    }
+                };
 
                 _entityStore.AddEntity(p);
             }
@@ -33,9 +69,35 @@ namespace wallaby_api.Controllers
             for (int i = 0; i < 5; i++)
             {
                 var p = new Product();
-                p.Slug = "prodotto" + (i + 1).ToString();
                 p.ProductId = (i + 1).ToString();
-                p.Title = "Titolo prodotto " + (i + 1).ToString();
+
+                p.Slug = new LocalizedField
+                {
+                    Translations = new List<Translation> {
+                        new Translation {
+                            Lang = "it",
+                            Text = "prodotto" + (i + 1).ToString()
+                        },
+                        new Translation{
+                            Lang = "en",
+                            Text = "product-en" + (i + 1).ToString()
+                        }
+                    },
+                };
+
+                p.Title = new LocalizedField
+                {
+                    Translations = new List<Translation> {
+                        new Translation {
+                            Lang = "it",
+                            Text = "Titolo prodotto" + (i + 1).ToString()
+                        },
+                        new Translation {
+                            Lang = "en",
+                            Text = "Title product" + (i + 1).ToString()
+                        }
+                    }
+                };
 
                 _entityStore.AddEntity(p);
             }
