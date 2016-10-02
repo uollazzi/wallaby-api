@@ -28,11 +28,11 @@ namespace wallaby_api.Controllers
                     Translations = new List<Translation> {
                         new Translation {
                             Lang = "it",
-                            Text = "post" + (i + 1).ToString()
+                            Value = "post" + (i + 1).ToString()
                         },
                         new Translation {
                             Lang = "en",
-                            Text = "post-en" + (i + 1).ToString()
+                            Value = "post-en" + (i + 1).ToString()
                         }
                     }
                 };
@@ -41,11 +41,11 @@ namespace wallaby_api.Controllers
                     Translations = new List<Translation> {
                         new Translation {
                             Lang = "it",
-                            Text = "Titolo post" + (i + 1).ToString()
+                            Value = "Titolo post" + (i + 1).ToString()
                         },
                         new Translation {
                             Lang = "en",
-                            Text = "Title post" + (i + 1).ToString()
+                            Value = "Title post" + (i + 1).ToString()
                         }
                     }
                 };
@@ -54,11 +54,11 @@ namespace wallaby_api.Controllers
                     Translations = new List<Translation> {
                         new Translation {
                             Lang = "it",
-                            Text = "Testo post" + (i + 1).ToString()
+                            Value = "Testo post" + (i + 1).ToString()
                         },
                         new Translation {
                             Lang = "en",
-                            Text = "Text post" + (i + 1).ToString()
+                            Value = "Text post" + (i + 1).ToString()
                         }
                     }
                 };
@@ -76,11 +76,11 @@ namespace wallaby_api.Controllers
                     Translations = new List<Translation> {
                         new Translation {
                             Lang = "it",
-                            Text = "prodotto" + (i + 1).ToString()
+                            Value = "prodotto" + (i + 1).ToString()
                         },
                         new Translation{
                             Lang = "en",
-                            Text = "product-en" + (i + 1).ToString()
+                            Value = "product-en" + (i + 1).ToString()
                         }
                     },
                 };
@@ -90,11 +90,11 @@ namespace wallaby_api.Controllers
                     Translations = new List<Translation> {
                         new Translation {
                             Lang = "it",
-                            Text = "Titolo prodotto" + (i + 1).ToString()
+                            Value = "Titolo prodotto" + (i + 1).ToString()
                         },
                         new Translation {
                             Lang = "en",
-                            Text = "Title product" + (i + 1).ToString()
+                            Value = "Title product" + (i + 1).ToString()
                         }
                     }
                 };

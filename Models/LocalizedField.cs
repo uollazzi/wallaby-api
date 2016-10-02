@@ -15,6 +15,6 @@ namespace wallaby_api.Models
         public string Lang { get; set; }
 
         [Required]
-        public string Text { get; set; }
+        public string Value { get; set; }
     }
 }
